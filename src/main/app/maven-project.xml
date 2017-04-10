@@ -31,6 +31,5 @@ http://www.mulesoft.org/schema/mule/json http://www.mulesoft.org/schema/mule/jso
     <flow name="maven-projectFlow1">
         <jms:inbound-endpoint queue="flights" connector-ref="Active_MQ" doc:name="JMS"/>
         <logger message="#[message.payload]" level="INFO" doc:name="Logger"/>
-        <json:object-to-json-transformer doc:name="Object to JSON"/>
     </flow>
 </mule>
