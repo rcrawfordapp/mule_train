@@ -28,6 +28,7 @@ http://www.mulesoft.org/schema/mule/json http://www.mulesoft.org/schema/mule/jso
 		<object-to-string-transformer doc:name="Object to String" />
 		<jms:outbound-endpoint queue="flights" connector-ref="Active_MQ" doc:name="JMS" />
         <logger level="INFO" doc:name="Logger"/>
+        <set-property propertyName="#['Content-Type']" value="#['application/json']" doc:name="Property"/>
 	</flow>
 	<flow name="maven-projectFlow1">
 		<jms:inbound-endpoint queue="flights" connector-ref="Active_MQ" doc:name="JMS" />
